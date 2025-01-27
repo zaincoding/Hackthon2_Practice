@@ -57,6 +57,7 @@ export default function Home() {
     return(
        <div key={uniqueId}>
        <div>
+        <div>{item.id}</div>
         <div><Image src={item.image_url} alt={item.name} width={200} height={200}/></div>
         <div>{item.name}</div>
         <div>{item.description}</div>
