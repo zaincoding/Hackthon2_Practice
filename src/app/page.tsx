@@ -4,7 +4,7 @@ import Image from 'next/image'
 interface ProductType{
   id:number;
   name: string;
-  description: String;
+  description: string;
   price:number;
   quantity:number;
   image_url: string;
