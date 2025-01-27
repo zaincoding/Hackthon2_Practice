@@ -2,7 +2,7 @@
 
 import {useContext, createContext, useState, ReactNode} from 'react'
 export interface CartItem{
-    id:number|string;
+    id:number;
     name:string;
     description: string;
     price:number;
@@ -36,7 +36,7 @@ export const CartProvider = ({children}:{children: ReactNode})=>{
    }
 
 
-   const removeFromCart = (id: number | string) => {
+   const removeFromCart = (id: number) => {
     setCart((prevCart) =>
       prevCart
         .map((item) =>

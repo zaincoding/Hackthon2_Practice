@@ -7,7 +7,7 @@ import { useCart } from "@/app/context/CartContext";
 import { useEffect, useState } from "react";
 
 interface ProductType {
-  id: number | string;
+  id: number;
   name: string;
   description: string;
   price: number;
@@ -15,14 +15,14 @@ interface ProductType {
   image_url: string;
 }
 
-const generateUid = (product: ProductType) => {
-  return `${product.name}-${product.price}-${product.description}`;
-};
+// const generateUid = (product: ProductType) => {
+//   return `${product.name}-${product.price}-${product.description}`;
+// };
 
 const getProduct = async () => {
   const products = await client.fetch(`
       *[_type == "product"][0..4]{
-        id,
+        _id,
         name,
         description,
         price,
@@ -52,10 +52,10 @@ export default function Home() {
       <h1>Products</h1>
       <div>
         {products.map((item: ProductType) => {
-          const uniqueId = generateUid(item);
+          // const uniqueId = generateUid(item);
 
           return (
-            <div key={uniqueId}>
+            <div key={item.id}>
               <div>
                 <Image
                   src={item.image_url}
@@ -69,7 +69,7 @@ export default function Home() {
               </div>
 
               <button
-                onClick={() => addToCart({ ...item, id: uniqueId, quantity: 1 })}
+                onClick={() => addToCart({ ...item, quantity: 1 })}
                 className="bg-blue-500 text-white px-4 py-2 mt-2 hover:bg-blue-300"
               >
                 Add To Cart
