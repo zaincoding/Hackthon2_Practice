@@ -126,7 +126,7 @@ height={50}/>
 
         <td className="border border-gray-300 px-4 py-2 truncate-max-xs">
           <button
-            onClick={() => removeFromCart(item.id as number)}
+            onClick={() => removeFromCart(item.id)}
             className="bg-red-500 text-white px-4 py-2 rounded"
           >
             Remove
