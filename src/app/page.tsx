@@ -34,7 +34,7 @@ const getProduct = async () => {
 };
 
 export default async function Home() {
-  const { addToCart } = useCart();
+  // const { addToCart } = useCart();
 
 
   const products = await getProduct()
