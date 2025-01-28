@@ -2,9 +2,9 @@
 
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
-import Cart from "@/app/context/cart";
-import { useCart,CartItem } from "@/app/context/CartContext";
-import { useEffect, useState } from "react";
+// import Cart from "@/app/context/cart";
+import { CartItem } from "@/app/context/CartContext";
+// import { useEffect, useState } from "react";
 
 // interface ProductType {
 //   id: number;
