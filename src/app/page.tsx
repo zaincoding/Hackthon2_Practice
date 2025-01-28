@@ -1,19 +1,19 @@
-"use client";
+'use client'
 
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import Cart from "@/app/context/cart";
-import { useCart } from "@/app/context/CartContext";
+import { useCart,CartItem } from "@/app/context/CartContext";
 import { useEffect, useState } from "react";
 
-interface ProductType {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  quantity: number;
-  image_url: string;
-}
+// interface ProductType {
+//   id: number;
+//   name: string;
+//   description: string;
+//   price: number;
+//   quantity: number;
+//   image_url: string;
+// }
 
 // const generateUid = (product: ProductType) => {
 //   return `${product.name}-${product.price}-${product.description}`;
@@ -33,25 +33,27 @@ const getProduct = async () => {
   return products;
 };
 
-export default function Home() {
+export default async function Home() {
   const { addToCart } = useCart();
 
-  // Fetch products on the client-side
-  const [products, setProducts] = useState<ProductType[]>([]);
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const data = await getProduct();
-      setProducts(data);
-    };
-    fetchProducts();
-  }, []);
+  const products = await getProduct()
+  // Fetch products on the client-side
+  // const [products, setProducts] = useState<CartItem[]>([]);
+
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     const data = await getProduct();
+  //     setProducts(data);
+  //   };
+  //   fetchProducts();
+  // }, []);
 
   return (
     <div>
       <h1>Products</h1>
       <div>
-        {products.map((item: ProductType) => {
+        {products.map((item: CartItem) => {
           // const uniqueId = generateUid(item);
 
           return (
@@ -77,7 +79,7 @@ export default function Home() {
             </div>
           );
         })}
-        <Cart />
+        {/* <Cart /> */}
       </div>
     </div>
   );
