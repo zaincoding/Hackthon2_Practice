@@ -90,51 +90,51 @@ try{
 
               
           cart.map((item) => (
-                  <table key={item.id} className="min-w-full border border-gray-300 grid sm:w-[400px]">
-  <thead className="bg-gray-100 w-full" >
-    <tr>
-    <th className="border border-gray-300 px-4 py-2 text-left">Image</th>
-      <th className="border border-gray-300 px-4 py-2 text-left">Item Name</th>
-      <th className="border border-gray-300 px-4 py-2 text-left">Price</th>
-      <th className="border border-gray-300 px-4 py-2 text-left">Quantity</th>
-      <th className="border border-gray-300 px-4 py-2 text-left">Total</th>
-      <th className="border border-gray-300 px-4 py-2 text-left">Action</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-            <tr
-              key={item.id}
-              className="hover:bg-gray-50"
-            >
-
-<td className='border border-gray-300 px-4 py-2 truncate max-w-xs'><Image src={item.image_url} 
-  alt={item.name}
-width={50}
-height={50}/>
-     
-</td>
-
-              <td className='border border-gray-300 px-4 py-2 truncate max-w-xs'>{item.name}</td>
-
-                      <td className="border border-gray-300 px-4 py-2 truncate-max-xs">${item.price.toFixed(2)}</td>
-
-        <td className="border border-gray-300 px-4 py-2 truncate-max-xs">{item.quantity}</td>
-
-        <td className="border border-gray-300 px-4 py-2 truncate-max-xs">
-          ${(item.price * item.quantity).toFixed(2)}
-        </td>
-
-        <td className="border border-gray-300 px-4 py-2 truncate-max-xs">
-          <button
-            onClick={() => removeFromCart(item.id)}
-            className="bg-red-500 text-white px-4 py-2 rounded"
-          >
-            Remove
-          </button>
-        </td>
-
-            </tr>
-            </table>
+            <table key={item.id} className="min-w-full border border-gray-300">
+            <thead className="bg-gray-100 w-full" >
+              <tr>
+              <th className="border border-gray-300 px-4 py-2 text-left">Image</th>
+                <th className="border border-gray-300 px-4 py-2 text-left">Item Name</th>
+                <th className="border border-gray-300 px-4 py-2 text-left">Price</th>
+                <th className="border border-gray-300 px-4 py-2 text-left">Quantity</th>
+                <th className="border border-gray-300 px-4 py-2 text-left">Total</th>
+                <th className="border border-gray-300 px-4 py-2 text-left">Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+                      <tr
+                        key={item.id}
+                        className="hover:bg-gray-50"
+                      >
+          
+          <td className='border border-gray-300 px-4 py-2 truncate max-w-xs'><Image src={item.image_url} 
+            alt={item.name}
+          width={50}
+          height={50}/>
+               
+          </td>
+          
+                        <td className='border border-gray-300 px-4 py-2 truncate max-w-xs'>{item.name}</td>
+          
+                                <td className="border border-gray-300 px-4 py-2 truncate-max-xs">${item.price.toFixed(2)}</td>
+          
+                  <td className="border border-gray-300 px-4 py-2 truncate-max-xs">{item.quantity}</td>
+          
+                  <td className="border border-gray-300 px-4 py-2 truncate-max-xs">
+                    ${(item.price * item.quantity).toFixed(2)}
+                  </td>
+          
+                  <td className="border border-gray-300 px-4 py-2 truncate-max-xs">
+                    <button
+                      onClick={() => removeFromCart(item.id )}
+                      className="bg-red-500 text-white px-4 py-2 rounded"
+                    >
+                      Remove
+                    </button>
+                  </td>
+          
+                      </tr>
+                      </table>
           
           ))
 
