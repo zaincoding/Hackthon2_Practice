@@ -2,7 +2,7 @@
 
 import {useContext, createContext, useState, ReactNode} from 'react'
 export interface CartItem{
-    id:number;
+    id:string;
     name:string;
     description: string;
     price:number;
@@ -14,7 +14,7 @@ export interface CartItem{
 interface cartContextType{
     cart: CartItem[];
     addToCart:(item:CartItem) => void;
-    removeFromCart:(id:number) => void;
+    removeFromCart:(id:string) => void;
 }
 
 const CartContext = createContext<cartContextType | null>(null);
@@ -36,7 +36,7 @@ export const CartProvider = ({children}:{children: ReactNode})=>{
    }
 
 
-   const removeFromCart = (id: number) => {
+   const removeFromCart = (id: string) => {
     setCart((prevCart) =>
       prevCart
         .map((item) =>
