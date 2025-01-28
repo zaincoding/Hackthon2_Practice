@@ -1,5 +1,5 @@
 'use client';
-// import {ShoppingCart} from 'phosphor-react';
+import {ShoppingCart} from 'phosphor-react';
 import { useEffect, useState } from 'react';
 import { useCart} from '../context/CartContext';
 import Image from 'next/image';
@@ -68,7 +68,7 @@ try{
         <div>
                 <div className='flex space-x-6'>
                 <h1 className="text-2xl mb-4 font-serif">Shopping Cart</h1>
-                {/* <ShoppingCart size={36}/> */}
+                <ShoppingCart size={36}/>
                 </div>
                 <h2 className="text-xl mb-4">Your Cart</h2>
       
@@ -90,7 +90,7 @@ try{
 
               
           cart.map((item) => (
-                  <table key={item.id} className="min-w-full border border-gray-300">
+                  <table key={item.id} className="min-w-full border border-gray-300 grid sm:w-[400px]">
   <thead className="bg-gray-100 w-full" >
     <tr>
     <th className="border border-gray-300 px-4 py-2 text-left">Image</th>

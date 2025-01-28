@@ -18,7 +18,7 @@ const ProductsList = ({ products }: ProductsListProps) => {
   const { addToCart } = useCart(); 
 
   return (
-      <div  className="grid grid-cols-3 gap-4 max-w-[1280px] mx-4 mt-4">
+      <div  className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 max-w-[1280px] mx-4 mt-4">
         {products.map((item: CartItem) => {
             const uid = generateUid(item)
         return(
